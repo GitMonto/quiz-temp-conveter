@@ -1,5 +1,19 @@
-import { add2Nums } from "./index.js";
 
-test("1 + 1 = 2", () => {
-  expect(add2Nums(1, 1)).toBe(2);
+import tryConvert from "./index.js"
+
+
+describe("tryConvet", () => {
+test("Converts between Celsius and Fahrenheit", () => {
+  expect(tryConvert(100, "toFahrenheit")).toBe("212");
+})
+test("Converts between Fahrenheit and Celsius", () => {
+  expect(tryConvert(50, "toCelsius")).toBe("10");
+})
+
+test("Convert to Celsius with non-numerical input", () => {
+  expect(tryConvert("", "toCelsius")).toBe("");
+})
+test("Convert to Fahrenheit with non-numerical input", () => {
+  expect(tryConvert("", "toFahrenheit")).toBe("");
+})
 });
